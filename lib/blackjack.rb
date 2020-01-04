@@ -15,7 +15,7 @@ def prompt_user
 end
 
 def get_user_input
-  gets.chomp 
+  gets.chomp
 end
 
 def end_game(card_total)
@@ -26,7 +26,7 @@ def initial_round
   card1 = deal_card
   card2 = deal_card
   card_total = card1 + card2
-  
+
   display_card_total(card_total)
   card_total
 end
@@ -34,16 +34,16 @@ end
 def hit?(card_total)
   prompt_user
   user_input = get_user_input
-  
+
   if user_input == 's'
-    card_total =+ 0
+    return card_total
   elsif user_input == 'h'
     card_total =+ deal_card
   else
     invalid_command
-    prompt_user
+    #prompt_user
   end
-  
+
   card_total
 end
 
